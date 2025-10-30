@@ -1,7 +1,9 @@
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const res = await fetch(`http://localhost:3000/api/product/${slug}`, {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+
+  const res = await fetch(`${baseUrl}/api/product/${slug}`, {
     cache: "no-store",
   });
 
