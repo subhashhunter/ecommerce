@@ -12,7 +12,7 @@ export default function Dashboard() {
     const verifyAdmin = async () => {
       const token = localStorage.getItem("adminToken");
       if (!token) {
-        router.push("/admin/login");
+        router.push("/login");
         return;
       }
 
@@ -25,7 +25,7 @@ export default function Dashboard() {
 
       if (!res.ok) {
         localStorage.removeItem("adminToken");
-        router.push("/admin/login");
+        router.push("/login");
       } else {
       
         fetchStats();

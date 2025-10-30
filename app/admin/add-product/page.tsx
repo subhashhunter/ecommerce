@@ -27,7 +27,7 @@ export default function AddProductPage() {
     const token = localStorage.getItem("adminToken");
     if (!token) {
       alert("Not authorized");
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
 

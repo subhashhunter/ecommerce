@@ -12,7 +12,7 @@ export default function AdminPanel() {
     const verifyAdmin = async () => {
       const token = localStorage.getItem("adminToken");
       if (!token) {
-        router.push("/admin/login");
+        router.push("/login");
         return;
       }
 
@@ -24,7 +24,7 @@ export default function AdminPanel() {
 
       if (!res.ok) {
         localStorage.removeItem("adminToken");
-        router.push("/admin/login");
+        router.push("/login");
       } else {
         fetchProducts();
       }

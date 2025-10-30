@@ -57,7 +57,7 @@ export default function EditproductPage(){
     const token=localStorage.getItem("adminToken")
      if (!token) {
       alert("Unauthorized");
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
     const res=await fetch(`/api/products/${productId}`,{
